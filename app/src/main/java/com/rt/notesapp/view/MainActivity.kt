@@ -6,8 +6,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.ViewModelProvider
 import com.rt.notesapp.R
+import com.rt.notesapp.database.NoteDatabase
+import com.rt.notesapp.repository.NoteRepository
 import com.rt.notesapp.viewmodel.NoteViewModel
+import com.rt.notesapp.viewmodel.NoteViewModelFactory
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,5 +27,15 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        setupViewModel()
+
+    }
+
+    private fun setupViewModel(){
+        val noteRepository = NoteRepository(NoteDatabase(this))
+        val viewModelProviderFactory = NoteViewModelFactory(application, noteRepository)
+        noteViewModel = ViewModelProvider(this, viewModelProviderFactory)[NoteViewModel::class.java]
+
     }
 }

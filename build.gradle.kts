@@ -24,3 +24,4 @@ buildscript {
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$navVersion")
     }
 }
+val defaultMinSdkVersion by extra(24)

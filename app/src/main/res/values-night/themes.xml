@@ -3,6 +3,5 @@
     <style name="Base.Theme.NotesApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
-        <item name="android:forceDarkAllowed" tools:ignore="NewApi">false</item>
     </style>
 </resources>

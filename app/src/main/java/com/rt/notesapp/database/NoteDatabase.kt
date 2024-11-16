@@ -7,8 +7,7 @@ import androidx.room.RoomDatabase
 import com.rt.notesapp.model.Note
 
 @Database(entities = [Note::class], version = 1)
-// This is the main access point of the database.
-abstract class NoteDatabase: RoomDatabase() {
+abstract class NoteDatabase: RoomDatabase() { // This is the main access point of the database.
 
     // abstract function is basically no body in it.
     abstract fun getNoteDao(): NoteDao

@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.rt.notesapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.rt.notesapp"
